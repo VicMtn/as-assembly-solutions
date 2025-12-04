@@ -1,208 +1,239 @@
-# AstroFlow - Logistics & Manufacturing Website Template
+# AS Assembly Solutions SA - Site Web Officiel
 
-A modern, professional Astro.js template for logistics, manufacturing, and supply chain companies. Built with React, Tailwind CSS, and TypeScript.
+> Site web moderne pour AS Assembly Solutions SA, entreprise spécialisée dans la fabrication de sous-ensembles, ensembles et machines complètes basée à Etoy, Suisse.
 
 ![Astro](https://img.shields.io/badge/Astro-5.16.0-FF5D01?logo=astro&logoColor=white)
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.17-38B2AC?logo=tailwind-css&logoColor=white)
 
-## 🖼️ Preview
+---
 
-### Website Screenshot
-<img alt="AstroFlow Website Preview" src="./public/AstroFlow - Astrojs Logistics & Manufacturing Website Template.png" />
+## 📋 À propos du projet
 
-### Performance & Speed
-<img alt="Performance Metrics" src="./public/speed-metrics.png" />
+Ce projet consiste en une refonte complète du site web de **AS Assembly Solutions SA**. L'objectif est de créer une présence web moderne, performante et professionnelle qui reflète l'excellence et le savoir-faire de l'entreprise dans le domaine de la fabrication industrielle.
 
-## ✨ Features
+### À propos de l'entreprise
 
-- 🚀 **Built with Astro** - Fast, modern static site generation
-- ⚛️ **React Components** - Interactive components with React
-- 🎨 **Tailwind CSS 4** - Modern utility-first styling
-- 📱 **Fully Responsive** - Mobile-first design
-- ♿ **Accessible** - Built with accessibility in mind
-- 🎯 **SEO Optimized** - Meta tags and semantic HTML
-- 🎭 **Smooth Animations** - Powered by Motion library
-- 🎨 **Modern UI** - Beautiful gradient designs and components
+**AS Assembly Solutions SA** est une société active dans la fabrication complète de sous-ensembles, ensembles et machines complètes depuis 2008. L'entreprise est située dans la zone industrielle d'Etoy, entre Genève et Lausanne, au cœur d'une riche culture industrielle et mécanique.
 
-## 📦 Pages Included
+### Valeurs clés
 
-- **Home** - Hero section, features, stats, testimonials
-- **Capabilities** - Service offerings showcase
-- **Use Cases** - Industry-specific solutions
-- **Facilities** - Location and facility information
-- **Request Quote (RFQ)** - Contact form for quotes
-- **Documentation** - Resources and guides
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js 18+ and npm
-
-### Installation
-
-1. Clone this repository:
-```bash
-git clone https://github.com/yourusername/astroflow.git
-cd astroflow
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:4321](http://localhost:4321) in your browser
-
-## 📝 Configuration
-
-### Site Configuration
-
-Update `src/config/site.ts` with your information:
-
-```typescript
-export const SITE = {
-  title: 'Your Company Name', // TODO: Replace with your company name
-  description: 'Your company description', // TODO: Update with your description
-  url: 'https://yourdomain.com', // TODO: Replace with your actual domain
-  author: 'Your Company Name', // TODO: Replace with your company name
-} as const;
-
-export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/company/yourcompany', // TODO: Replace with your LinkedIn
-  twitter: 'https://twitter.com/yourcompany', // TODO: Replace with your Twitter
-  facebook: 'https://facebook.com/yourcompany', // TODO: Replace with your Facebook
-} as const;
-```
-
-### Form Integration
-
-The RFQ form (`src/components/react/RFQForm.tsx`) currently logs form data to the console. To integrate with a backend:
-
-1. **Option 1: Form Service** (Recommended for static sites)
-   - Use [Formspree](https://formspree.io/), [Netlify Forms](https://www.netlify.com/products/forms/), or similar
-   - Update the `handleSubmit` function in `RFQForm.tsx`
-
-2. **Option 2: Custom API**
-   - Create an API endpoint
-   - Update the form submission handler
-
-Example with Formspree:
-```typescript
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  const formData = new FormData(e.currentTarget);
-  
-  const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  });
-  
-  if (response.ok) {
-    // Show success message
-  }
-};
-```
-
-## 🛠️ Available Scripts
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:4321`     |
-| `npm run build`        | Build your production site to `./dist/`         |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-
-## 📁 Project Structure
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/          # Images and static assets
-│   ├── components/      # Reusable components
-│   │   ├── home/        # Home page components
-│   │   ├── react/       # React interactive components
-│   │   └── ui/          # UI components
-│   ├── config/          # Configuration files
-│   ├── layouts/         # Page layouts
-│   ├── pages/           # Astro pages (routes)
-│   ├── styles/          # Global styles
-│   └── utils/           # Utility functions
-├── astro.config.mjs     # Astro configuration
-├── package.json
-└── tsconfig.json
-```
-
-## 🎨 Customization
-
-### Colors
-
-The template uses Tailwind CSS. Customize colors in `src/styles/global.css` or update Tailwind config.
-
-### Images
-
-Replace placeholder images in `src/assets/` with your own. The template includes stock photos as placeholders.
-
-### Content
-
-- Update text content in component files
-- Modify navigation in `src/config/site.ts`
-- Update facility information in `src/pages/facilities.astro`
-- Customize testimonials in `src/components/home/Testimonials.astro`
-
-## 🚢 Deployment
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-This creates a `dist/` folder with your static site.
-
-### Deploy to Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/astroflow)
-
-### Deploy to Netlify
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yourusername/astroflow)
-
-### Other Platforms
-
-The `dist/` folder can be deployed to any static hosting service:
-- GitHub Pages
-- Cloudflare Pages
-- AWS S3 + CloudFront
-- Any static hosting provider
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/astroflow/issues).
-
-## ⭐ Show Your Support
-
-If you find this template useful, please give it a star on GitHub!
-
-## 📧 Support
-
-For questions or support, please open an issue on GitHub.
+- **PROXIMITÉ** - Positionnement stratégique pour des partenariats réussis en Suisse romande
+- **FLEXIBILITÉ** - Spécialisation dans la fabrication complète, de sous-ensembles aux machines complètes
+- **RÉACTIVITÉ** - Réseau étendu, infrastructure de premier plan et expertise reconnue
 
 ---
 
-Built with ❤️ using [Astro](https://astro.build)
+## ✨ Fonctionnalités techniques
+
+- 🚀 **Astro.js** - Génération de sites statiques ultra-rapides
+- ⚛️ **React** - Composants interactifs pour une expérience utilisateur dynamique
+- 🎨 **Tailwind CSS 4** - Design système moderne et responsive
+- 📱 **Mobile-First** - Optimisé pour tous les appareils
+- ♿ **Accessibilité** - Respect des standards WCAG
+- 🎯 **SEO Optimisé** - Balises meta et HTML sémantique
+- 🎭 **Animations fluides** - Interactions modernes et engageantes
+- ⚡ **Performance maximale** - Scores Lighthouse excellents
+- 🌍 **Multilingue** - Support FR/EN/DE
+
+---
+
+## 🚀 Démarrage rapide
+
+### Prérequis
+
+- Node.js 18+ 
+- npm ou pnpm
+
+### Installation
+
+```bash
+# Cloner le repository
+git clone [URL_DU_REPO]
+cd assembly-solutions
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+```
+
+Le site sera accessible sur `http://localhost:4321`
+
+### Scripts disponibles
+
+| Commande              | Description                                          |
+| :-------------------- | :--------------------------------------------------- |
+| `npm install`         | Installe toutes les dépendances                      |
+| `npm run dev`         | Lance le serveur de développement                    |
+| `npm run build`       | Compile le site pour la production                   |
+| `npm run preview`     | Prévisualise le build de production                  |
+| `npm run astro check` | Vérifie les erreurs TypeScript et Astro             |
+
+---
+
+## 📁 Structure du projet
+
+```
+assembly-solutions/
+├── public/                  # Fichiers statiques (favicon, images, etc.)
+├── src/
+│   ├── assets/             # Images et ressources média
+│   ├── components/         # Composants réutilisables
+│   │   ├── home/          # Composants spécifiques à la page d'accueil
+│   │   ├── react/         # Composants React interactifs
+│   │   └── ui/            # Composants UI de base
+│   ├── config/            # Configuration du site (SEO, navigation, etc.)
+│   ├── layouts/           # Templates de mise en page
+│   ├── pages/             # Pages du site (routage automatique)
+│   ├── styles/            # Styles globaux et variables CSS
+│   └── utils/             # Fonctions utilitaires et constantes
+├── astro.config.mjs       # Configuration Astro
+├── tailwind.config.js     # Configuration Tailwind (si applicable)
+├── tsconfig.json          # Configuration TypeScript
+└── package.json           # Dépendances et scripts
+```
+
+---
+
+## 🎨 Architecture des pages
+
+### Pages principales
+
+| Page              | Route            | Description                                    |
+| :---------------- | :--------------- | :--------------------------------------------- |
+| Accueil           | `/`              | Page d'accueil avec hero, atouts et CTA       |
+| Solutions         | `/solutions`     | Présentation des solutions offertes            |
+| Services          | `/services`      | Détails des services de fabrication            |
+| À propos          | `/about`         | Histoire et valeurs de l'entreprise            |
+| Contact           | `/contact`       | Formulaire de contact et informations          |
+
+### Composants clés
+
+- **Header** - Navigation principale responsive avec menu mobile
+- **Footer** - Informations de contact et liens légaux
+- **Hero** - Section d'en-tête avec CTA
+- **Features** - Présentation des atouts (Proximité, Flexibilité, Réactivité)
+- **Services** - Mise en avant des services
+- **Testimonials** - Témoignages clients
+- **CTA** - Appels à l'action stratégiques
+
+---
+
+## ⚙️ Configuration
+
+### Configuration du site
+
+Modifier le fichier `src/config/site.ts` :
+
+```typescript
+export const SITE = {
+  title: 'Votre nom',
+  description: '',
+  url: '',
+  author: '',
+} as const;
+
+export const CONTACT = {
+  email: '',
+  phone: '',
+  address: '',
+} as const;
+```
+
+### Personnalisation du design
+
+- **Couleurs** : Modifier `src/styles/global.css`
+- **Police** : Mettre à jour les imports dans le layout de base
+- **Breakpoints** : Utiliser les classes Tailwind standard
+
+---
+
+## 🌍 Internationalisation
+
+Le site cible principalement un public suisse romand mais peut être étendu pour supporter :
+
+- 🇫🇷 Français (langue principale)
+- 🇬🇧 Anglais
+- 🇩🇪 Allemand
+
+Structure recommandée pour l'i18n :
+```
+src/
+├── i18n/
+│   ├── fr.json
+│   ├── en.json
+│   └── de.json
+
+```
+
+---
+
+## 📝 Contenu à préparer
+
+### Textes et copies
+
+- [ ] Présentation détaillée de l'entreprise
+- [ ] Descriptions des services (fabrication, assemblage, tests)
+- [ ] Liste des industries servies
+- [ ] Témoignages clients
+- [ ] Certifications et labels qualité
+- [ ] Historique et chiffres clés
+
+### Média
+
+- [ ] Logo AS Assembly Solutions (SVG haute qualité)
+- [ ] Photos de l'atelier et des installations
+- [ ] Photos des équipes
+- [ ] Photos de réalisations/produits
+- [ ] Schémas et infographies techniques
+- [ ] Vidéo de présentation (optionnel)
+
+### Informations légales
+
+- [ ] Mentions légales
+- [ ] Politique de confidentialité
+- [ ] Conditions d'utilisation
+- [ ] Politique de cookies (si applicable)
+
+---
+
+
+
+## 📚 Documentation technique
+
+### Technologies utilisées
+
+- [Astro Documentation](https://docs.astro.build)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs)
+
+### Standards de code
+
+- ESLint pour le linting JavaScript/TypeScript
+- Prettier pour le formatage automatique
+- Convention de nommage : camelCase pour les variables, PascalCase pour les composants
+
+
+
+## 📄 Licence
+
+Ce projet est propriété de **AS Assembly Solutions SA**. Tous droits réservés.
+
+
+
+## 📧 Contact projet
+
+Pour toute question concernant le développement de ce site :
+
+- **Email** : info@montavon.dev
+
+
+---
+**Développé pour AS Assembly Solutions SA**
+
+*Dernière mise à jour : Décembre 2025*
+
